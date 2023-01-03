@@ -1,6 +1,22 @@
-@Library('roboshop') _
+pipeline {
+ agent any
+  stages {
+   stage('code quality'){
+     steps {
+       echo 'code quality'
+     }
+   }
 
-env.COMPONENT = "shipping"
-env.REPO_URL = "https://github.com/raghudevopsb69/shipping"
-env.SONAR_OPTS="-Dsonar.java.binaries=./target"
-java()
+   stage('Test cases'){
+     steps {
+       echo 'Test cases'
+        }
+      }
+
+   stage('Publish release'){
+     steps {
+        echo 'Publish release'
+       }
+    }
+  }
+}
